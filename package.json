@@ -16,7 +16,11 @@
     "intelligence-automation"
   ],
   "license": "UNLICENSED",
-  "dependencies": {},
+  "dependencies": {
+    "@webwaka/organelle-cognitive-port": "workspace:*",
+    "@webwaka/organelle-prompt-assembler": "workspace:*",
+    "@webwaka/organelle-result-validator": "workspace:*"
+  },
   "devDependencies": {
     "typescript": "^5.0.0",
     "jest": "^29.0.0",
