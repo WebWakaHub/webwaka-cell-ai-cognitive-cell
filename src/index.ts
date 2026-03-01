@@ -1,9 +1,31 @@
 /**
- * CognitiveCell — Public API
- * Cell: CEL-AI-COGNITIVE_CELL-v0.1.0
- * Category: Intelligence & Automation
+ * AiCognitiveCell — Cell Layer
+ * Composes organelles per BIOLOGICAL_GOVERNANCE_CONSTITUTION §4.1
+ * Layer: cell → depends on → organelle
  */
 
-export { CognitiveCell, CognitiveCellValidationError } from './ai-cognitive-cell-cell';
-export { CognitiveCellOrchestrator } from './ai-cognitive-cell-orchestrator';
-export * from './types';
+import { CognitivePortOrchestrator } from "@webwaka/organelle-cognitive-port";
+import { PromptAssemblerOrchestrator } from "@webwaka/organelle-prompt-assembler";
+import { ResultValidatorOrchestrator } from "@webwaka/organelle-result-validator";
+
+export { CognitivePortOrchestrator } from '@webwaka/organelle-cognitive-port';
+export { PromptAssemblerOrchestrator } from '@webwaka/organelle-prompt-assembler';
+export { ResultValidatorOrchestrator } from '@webwaka/organelle-result-validator';
+
+/**
+ * AiCognitiveCell Composition
+ * Assembles organelle-layer components into a cohesive cell-layer capability.
+ */
+export class AiCognitiveCellComposition {
+  private cognitivePortOrchestrator: CognitivePortOrchestrator;
+  private promptAssemblerOrchestrator: PromptAssemblerOrchestrator;
+  private resultValidatorOrchestrator: ResultValidatorOrchestrator;
+
+  constructor() {
+    this.cognitivePortOrchestrator = new CognitivePortOrchestrator();
+    this.promptAssemblerOrchestrator = new PromptAssemblerOrchestrator();
+    this.resultValidatorOrchestrator = new ResultValidatorOrchestrator();
+  }
+}
+
+export * from "./types";
